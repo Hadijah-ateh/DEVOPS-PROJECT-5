@@ -10,5 +10,11 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/Hadijah-ateh/DEVOPS-PROJECT-5.git'
             }
         }
+        stage('Unit Testing'){
+
+            steps{
+                sh 'mvn test'
+            }
+        }
     }
 }
