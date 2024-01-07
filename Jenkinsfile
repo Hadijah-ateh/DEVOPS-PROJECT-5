@@ -22,5 +22,14 @@ pipeline{
                 sh 'mvn verify -DskipUnitTests'
             }
         }
+        stage('Statict Test Analysis'){
+
+            steps{
+
+                script{
+                    withSonarQubeEnv(credentialsId: 'sonarqube-token')
+                }
+            }
+        }
     }
 }
